@@ -14,6 +14,10 @@ public:
     }
   }
 
+  ~IntStack () {
+    delete [] tab;
+  }
+
   void push (int token) {
     if (not is_full()) {
       tab[top] = token;
@@ -37,14 +41,10 @@ public:
 
   void print () {
     std::cout << '[';
-    for (int k = 0; i < top; i++) {
-      std::cout << tab[i] << ' ';
+    for (int k = 0; k < top; k++) {
+      std::cout << tab[k] << ' ';
     }
     std::cout << '[';
-  }
-
-  void delete_stack () {
-    delete [] tab;
   }
 
 private:
@@ -55,7 +55,7 @@ private:
 
 };
 
-inline int InStack::pop () {
+inline int IntStack::pop () {
   if (not is_empty()) {
     top = top - 1;
     return tab[top];

@@ -6,20 +6,6 @@
 #include <iostream>
 #include "intstack.h"
 
-int caserreur () {
-    IntStack* st1 = new IntStack (0);
-    IntStack* st2 = new IntStack (1);
-    IntStack* st3 = new IntStack (1);
-    (*st2).push(23);
-    (*st3).push(14);
-    (*st2).push(46);
-    (*st3).pop();
-    (*st3).pop();
-    delete st1;
-    delete st2;
-    delete st3;
-}
-
 int test () {
     IntStack* cool = new IntStack (2);
     (*cool).print();
@@ -32,11 +18,29 @@ int test () {
 }
 
 int main () {
-    //std::cout << caserreur();
+    try {
+        IntStack* st1 = new IntStack (0);
+    }
+    catch (int i) {
+        std::cout << i << std::endl;
+    }
+    try {
+        IntStack* st2 = new IntStack (1);
+        (*st2).push(23);
+        (*st2).push(46);
+    }
+    catch (int i) {
+        std::cout << i << std::endl;
+    }
+    try {
+        IntStack* st3 = new IntStack (1);
+        (*st3).push(14);
+        (*st3).pop();
+        (*st3).pop();
+    }
+    catch (int i) {
+        std::cout << i << std::endl;
+    }
     std::cout << test (); 
     return 0;
 }
-
-// je ne sais pas comment tester tout dans la même fonction
-// donc à chaque fois je mets des // pour sélectionner les tests
-// que je ne veux pas faire
