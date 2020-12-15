@@ -6,7 +6,7 @@
 #include <iostream>
 #include "intstack.h"
 
-int test () {
+void test () {
     IntStack* cool = new IntStack (2);
     (*cool).print();
     (*cool).push(3);
@@ -21,7 +21,7 @@ int main () {
     try {
         IntStack* st1 = new IntStack (0);
     }
-    catch (int i) {
+    catch (const char* i) {
         std::cout << i << std::endl;
     }
     try {
@@ -29,7 +29,7 @@ int main () {
         (*st2).push(23);
         (*st2).push(46);
     }
-    catch (int i) {
+    catch (const char* i) {
         std::cout << i << std::endl;
     }
     try {
@@ -38,9 +38,9 @@ int main () {
         (*st3).pop();
         (*st3).pop();
     }
-    catch (int i) {
+    catch (const char* i) {
         std::cout << i << std::endl;
     }
-    std::cout << test (); 
+    //std::cout << test ();
     return 0;
 }

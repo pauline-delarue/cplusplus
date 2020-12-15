@@ -9,8 +9,13 @@ public:
       tab = new int [taille];
     }
     else {
-      std::cout << "taille nulle";
-      throw(0);
+      throw("taille nulle");
+    }
+  }
+
+    IntStack (const IntStack& rst): taille(rst.taille), top(rst.top), tab(new int[taille]) {
+    for (int i = 0; i < top; i++) {
+      tab[i] = rst.tab[i];
     }
   }
 
@@ -24,8 +29,7 @@ public:
       top = top + 1;
     }
     else {
-      std::cout << "pile pleine";
-      throw(1);
+      throw("pile pleine");
     }
   }
 
@@ -61,7 +65,6 @@ inline int IntStack::pop () {
     return tab[top];
   }
   else {
-    std::cout << "pile vide" << '\n';
-    throw(2);
+    throw("pile vide");
   }
 }
