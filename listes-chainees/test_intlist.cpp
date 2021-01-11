@@ -12,7 +12,7 @@ int main(){
     list.remove_back();
     list.print();
     std::cout << std::boolalpha << list.search(2) << std::endl;
-    std::cout << std::boolalpha << list.search(3) << std::endl;
+    std::cout << std::boolalpha << list.search(1) << std::endl;
     list.add_front(23);
     list.print();
     list.remove(1);
