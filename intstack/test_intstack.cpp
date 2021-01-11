@@ -2,20 +2,10 @@
 // pile de taille nulle, 
 // pile qu'on essaie de push mais qui est pleine, 
 // pile qu'on essaie de pop mais qui est vide
+// puis on teste un cas qui marche
 
 #include <iostream>
 #include "intstack.h"
-
-void test () {
-    IntStack* cool = new IntStack (2);
-    (*cool).print();
-    (*cool).push(3);
-    (*cool).print();
-    (*cool).push(4);
-    (*cool).print();
-    (*cool).pop();
-    (*cool).print();
-}
 
 int main () {
     try {
@@ -41,6 +31,13 @@ int main () {
     catch (const char* i) {
         std::cout << i << std::endl;
     }
-    //std::cout << test ();
+    IntStack* cool = new IntStack (2);
+    (*cool).print();
+    (*cool).push(3);
+    (*cool).print();
+    (*cool).push(4);
+    (*cool).print();
+    (*cool).pop();
+    (*cool).print();
     return 0;
 }
