@@ -2,23 +2,20 @@
 #include "intlist.h"
 
 int main(){
-    IntList l;
-    l.add_front(2);
-    l.print();
-    l.add_front(1);
-    l.add_back(3);
-    l.print();
-    l.remove_front();
-    l.print();
-    l.remove_back();
-    l.print();
-    std::cout << std::boolalpha << l.search(2) << std::endl;
-    std::cout << std::boolalpha << l.search(3) << std::endl;
-    l.add_front(20);
-    l.print();
-    l.add_back(30);
-    l.print();
-    l.remove(2);
-    l.print();
+    IntList list;
+    list.add_front(1);
+    list.print();
+    list.add_front(0);
+    list.add_back(4);
+    list.print();
+    list.remove_front();
+    list.remove_back();
+    list.print();
+    std::cout << std::boolalpha << list.search(2) << std::endl;
+    std::cout << std::boolalpha << list.search(3) << std::endl;
+    list.add_front(23);
+    list.print();
+    list.remove(1);
+    list.print();
     return 0;
 }
