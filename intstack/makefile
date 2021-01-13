@@ -9,4 +9,4 @@ test_intstack : test_intstack.o
 test_intstack.o : test_intstack.cpp intstack.h
 
 clean :
-	$(RM) test_intstack.o test_intstack intstack.h.gch
+	$(RM) test_intstack.o test_intstack intstack.h
